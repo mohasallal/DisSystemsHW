@@ -8,7 +8,8 @@ what we have to do:
 
 // Step 1: Define the array's length
 
-const arrayLength = 6;
+const arrayLength = Math.floor(Math.random() * 10) + 1;
+console.log("Array Length:", arrayLength);
 
 // Step 2: we need to fill the array with random numbers between 1 and 100
 
@@ -31,18 +32,12 @@ console.log(numbersArray);
 
 let summation = 0;
 
-
-//[0, 0, 0, 0]
-//[0, 0, 0, 0]
-//[0, 0, 0, 0]
-//[0, 0, 0, 0]
-
 if(arrayLength > 1) {
     for(let i = 1; i < arrayLength; i++) {
-summation += numbersArray[0][i - 1];
-summation += numbersArray[i - 1][arrayLength - 1];
-summation += numbersArray[arrayLength - 1][i];
-summation += numbersArray[arrayLength - i][0];
+        summation += numbersArray[0][i - 1];
+        summation += numbersArray[i - 1][arrayLength - 1];
+        summation += numbersArray[arrayLength - 1][i];
+        summation += numbersArray[arrayLength - i][0];
 }
 } else {
     summation = numbersArray[0][0];
